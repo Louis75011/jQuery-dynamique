@@ -1,0 +1,186 @@
+/*
+    Notes de cours d'Open Classrooms
+
+
+    Introduction à jQuery :
+    https://openclassrooms.com/fr/courses/3504441-introduction-a-jquery
+
+    HTML/CSS - JavaScript - jQuery - VScode - GoogleChrome - Terminal/Git/GitHub.
+
+    jQuery présenté :
+    jQuery est une bibliothèque de code JavaScript très utilisé à l'image de Boostrap pour le CSS. Celle-ci permet de réaliser plus rapidement et efficacement des fonctionnalités (sélections, manipulations, ajouter des éléments, rendus dynamiques, etc.). En interraction avec le DOM, c'est un incontournable du développement front-end.
+
+
+    jQuery ou JavaScript :
+    Nous pouvons faire les mêmes choses avec les deux, mais potentiellement jQuery est une bibliothèque de fonctionnalités qui nous fait gagner du temps et des lignes de code. Hélas avec le temps, on se rend compte que cette bibliothèque n'est pas si optimisée que ça et certains sites perdent ainsi en performance.
+
+    Le back-end fonctionne avec les deux aussi, mais jQuery ajoute AJAX qui facilite les interractions avec les serveurs, bases de données et les API (tout comme le pack NPM/yarn Axios).
+
+    jQuery adapte nativement votre code à tous les navigateurs et il est plus lisible malgré la réduction de code.
+
+    JavaScript est un langage de programmation inventé par Brendan Eich en 1995, et jQuery est une bibliothèque JavaScript open-source inventée par John Resig en 2006.
+
+    Concepts de base en JavaScript :
+    Il faut connaître les bases de JS avant d'utiliser une bibliothèque de code, et c'est encore plus vrai pour un framework qui demande de solides compétences (React.js, Vue.js).
+
+    JavaScipt vient compléter votre page en ajoutant une partie dynamique au HTML/CSS réputés plus figés.
+
+
+    Le vocabulaire JavaScript :
+    Principes fondamentaux à connaître pour comprendre l'utilisation de jQuery.
+
+    Le JS permet d'interragir avec la modelisation de la page HTML (structure de balises à récupérer pour agir sur un élément comme un bouton).
+
+    Les types de caractères sont string, numbers, boolean.
+
+    On affecte une valeur à une variable avec un =, on combine les valeurs avec le symbole +.
+
+    La condition se construit avec if et else, on les ajoute en général dans des fonctions pour déclencher quelque chose selon les conditions souhaitées.
+
+    let name = "Emily"
+    function greetStudents() {
+        alert('Hello students !');
+    }
+
+    Dans les accolades de la fonction, on place nos instructions qui vont définir un ensemble d'actions.
+
+
+    jQuery rédigé :
+    Il vous faut un éditeur de code, un navigateur (F12 > Console) et la documentation jQuery.
+
+    Ce n'est ni plus ni moins qu'un fichier JavaScript à ajouter dans une balise SCRIPT. Il est possible de récupérer le lien CDN aussi pour l'utiliser immédiatement selon les versions téléchargées.
+
+    Si un site, comme OpenClassrooms, utilise du jQuery on peut l'utiliser à notre tour dans la console pour modifier l'aspect du site (juste pour soi).
+
+    jQuery est disponible dans deux formats différents : le format de développement, et celui de production. Le premier permet de voir ce qui est développé de façon lisible et le second est optimisé pour être plus rapide et efficace (minifier, map).
+
+    ex. de sélecteur : $("li").addClass("starred")
+
+    Le symbole dollar tranforme l'objet en objet jQuery. L'élément du DOM passe au jQuery pour répondre à nos méthodes. Cela permet ensuite de sélectionner un élément puis d'agir dessus pour une grosse partie de développement.
+    
+    La sélection a un principe proche des sélecteurs CSS. Une fois que vous avez sélectionné des éléments (par classe ou identifiant), vous pouvez leur appliquer des règles de style, définir leur taille de police, leur couleur, etc. On selectionne 
+
+    Sélection CSS :
+    Sélectionner par type d'élément :h1,h2,p,img, etc.
+    Sélectionner par classe :.starred,.featured, etc.
+    Sélectionner par ID:#about,#contact, etc.
+
+    Le plus important est de fouiller la documentation selon ses besoins afin de découvrir les fonctions les plus pratiques (https://api.jquery.com/).
+
+    On utilise notamment les nombres en jQuery pour déplacer des éléments d'un certain nombre de pixels, ou définir un temps en millisecondes qu'un élément doit mettre à apparaître. On peut utiliser les chaînes de caractères en jQuery pour modifier du contenu HTML ou définir des propriétés, comme "red" pour une couleur. On utilise parfois les arrays en jQuery pour modifier les éléments d'une liste. 
+
+    Sélection des descendants :
+
+    électionner tous lesli au sein d'unol dans la structure de balises.
+
+    jQuery:
+    $("ol li")
+    $("ol > li") // Sélection du parent et des enfants
+    $("li#premier + li") // sélectionner le premier frère d'un LI donné
+    $("p:first") // sélectionne la première occurrence d'un élément, :last le dernier
+    $("li:eq(1)") // :eq(indice) : sélectionne l'élément à un indice donné
+
+    HTML:
+    <ol>
+        <li>Premier élément</li> <!-- sélectionné -->
+        <li>Second élément</li> <!-- sélectionné -->
+        <ul>
+            <li>Élément sans ordre</li> <!-- sélectionné -->
+        </ul>
+        <p>Hello World</p>
+    </ol>
+
+    Sélectionne les éléments qui ne sont pas le sélecteur ! (exemple : http://codepen.io/eclairereese/pen/xVPQyV)
+    $("li:not('')")
+    
+    Vous commencez à comprendre comment utiliser les filtres (deux points, nom du filtre, paramètres si nécessaire) ; sachez que la liste des possibilité est assez grande ! Il y a les filtres de visibilité, les filtres de contenu, les filtres d'attribut, et même des filtres de formulaires.
+
+    ex : :hidden : sélectionne les éléments cachés (les éléments dont la valeur CSS display est none, qui sont detype="hidden", ont une hauteur et une largeur nulles, ou ont un ancêtre lui-même invisible)
+
+
+    Les méthodes jQuery :
+    Premier pas dans la vraie programmation. Une fois que vous avez sélectionné un élément vous voulez agir dessus (ajouter une aniamtion sur un clic, faire exécuter des éléments personnalisés). Recherchez au fur et à mesure les méthodes dont vous avez besoin dans la documentation au fil de votre développement.
+
+    1. Sélection d'un élément converti en un objet jQuery avec $()
+    2. Point
+    3. Nom de la méthode
+    4. Parenthèses, vides ou contenant des paramètres (les paramètres sont des informations que vous envoyez à la méthode pour qu'elle puisse exécuter une action particulière).
+
+    Effets pour qu'un un élément :
+    1. apparaisse après le clic sur un bouton.
+    2. apparaisse lentement sur une page.
+    3. glisse vers le haut ou le bas de la page.
+    4. exécute vos propres animations personnalisées.
+
+    .show() : affiche le(s) élément(s) sélectionné(s).
+    .hide() : masque le(s) élément(s) sélectionné(s).
+    .toggle() : affiche ou masque le(s) élément(s) sélectionné(s) en fonction de son/leur état actuel.
+    .fadeIn() : fait apparaître en fondu le(s) élément(s) sélectionné(s).
+    .fadeOut() : fait disparaître en fondu le(s) élément(s) sélectionné(s).
+    .fadeTo() : amène progressivement le(s) élément(s) sélectionné(s) à une opacité donnée.
+    .slideUp() : masque le(s) élément(s) sélectionné(s) avec un défilement vers le haut.
+    .slideDown() : masque le(s) élément(s) sélectionné(s) avec un défilement vers le bas.
+    .slideToggle() : affiche ou masque le(s) élément(s) sélectionné(s) avec un défilement en fonction de son/leur état actuel.
+    
+    Manipuler le contenu :
+    .html() : remplace le contenu HTML de la page
+    .text() : remplace le texte de la page
+    .replaceWith() : remplace le(s) élément(s) sélectionné(s) entièrement, pas juste le texte ou le HTML à l'intérieur
+    .remove() : supprime les éléments de la page
+    .before() : insère du contenu avant le(s) élément(s) sélectionné(s)
+    .after() : insère du contenu après le(s) élément(s) sélectionné(s)
+    .prepend() : insère du contenu à l'intérieur du/des élément(s) sélectionné(s) (après la balise HTML ouvrante)
+    .append() : insère du contenu à l'intérieur du/des élément(s) sélectionné(s) (avant la balise HTML fermante)
+    .attr() : définit un attribut et sa valeur ou simplement récupère sa valeur
+    .removeAttr() : supprime un attribut, RIP
+    .addClass() : ajoute une nouvelle classe à/aux élément(s) sélectionné(s) (sans remplacer sa classe actuelle)
+    .removeClass() : supprime une classe du/des élément(s) sélectionné(s)
+    .css() : mon préféré. Récupère ou définit les propriétés CSS d'un élément, même plusieurs propriétés à la fois.
+
+    DOM & positions :
+    .find() : trouve un/des élément(s) correspondant au paramètre dans la sélection actuelle
+    .parent() : accède au parent direct d'un/des élément(s) ou à ses parents si on utilise .parents()
+    .children() : accède aux enfants de(s) élément(s)
+
+    .height() : hauteur d'un cadre sans les marges intérieures, extérieurs ni les bords
+    .width (): largeur d'un cadre sans les marges intérieures, extérieurs ni les bords
+    .innerHeight() : hauteur en comptant les marges intérieures
+    .innerWidth() : largeur en comptant les marges intérieures
+    .outerHeight() : hauteur en comptant les marges intérieures et les bords
+    .outerWidth() : largeur en comptant les marges intérieures et les bords
+    .outerHeight(true) : même méthode que ci-dessus, mais en envoyant le paramètre true, vous incluez également les marges extérieures.
+    .outerWidth(true) : même méthode que ci-dessus, mais en envoyant le paramètre true, vous incluez également les marges extérieures.
+    .offset() : définit les coordonnées d'un élément relativement au coin en haut à gauche de l'objet document
+    .position() : définit les coordonnées d'un élément relativement à son parent direct, ce qui peut être utile pour positionner des éléments au sein du même élément DOM. Mais vous utiliserez probablement .offset  plus souvent.
+
+    La méthode jQuery .on()  est votre clé pour travailler avec les événements (vous faites une écoute d'élément). Vous passez l'événement désiré (par exemple, « click ») en tant que paramètre à la méthode .on , suivi d'un second paramètre contenant ce qu'on appelle une fonction "gestionnaire". Au sein de la fonction, vous écrivez votre code jQuery qui sera exécuté quand l'événement a lieu.
+
+    Liste d'utilisation courante :
+    .on('click', function() { … }
+    .on('scroll', function() { … }
+    .on('hover', function() { … }
+    .on('mouseover', function() { … }
+    .on('mouseenter', function() { … }
+    .on('mouse leave', function() { … }
+    .on('keydown', function() { … }
+    .on('keyup', function() { … }
+    .on('keypress', function() { … }
+    .on('focus', function() { … }
+    .on('blur', function() { … }
+    .on('resize', function() { … }
+
+    $('p').on( 'click', function () {
+    alert("Quelqu'un a cliqué sur un paragraphe!")
+    });
+
+    EVENT :
+    Par exemple, imaginons que vous voulez que l'heure apparaisse à côté d'un élément lorsque l'événement a lieu.
+
+    L'objet "event" a plusieurs types de propriétés. Bien sûr, vous avez le type, qui décrit le type d'événement. Il y a également le target de l'événement (l'élément qui a lancé l'événement, comme p ), pageX et pageY (la position de la souris à partir de la gauche et le haut de ce que l'utilisateur voit de la page), timeStamp  (l'événement a eu lieu x﻿﻿ millisecondes après le 1/1/1970, une base que vous pouvez utiliser pour calculer la date et l'heure exactes), et plus encore.. :
+
+    let $p = $('p');
+    $p.on('click', function(event) {
+    let date = new Date(event.timeStamp);
+        $p.text("You clicked on: " + date)
+    });
+*/
